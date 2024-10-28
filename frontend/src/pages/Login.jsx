@@ -7,9 +7,9 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
 
-  const onSubmitHandler = async (e) => {
+  /* const onSubmitHandler = async (e) => {
         e.preventDefault()
-  }
+  } */
 
   return (
     <form className='min-h-[80vh] flex items-center'>
@@ -19,16 +19,16 @@ const Login = () => {
           {
             state === 'Sign Up' &&  <div className='w-full'>
             <p>Full Name</p>
-            <input type='text' className='border border-zinc-300 rounded w-full p-2 mt-1' onChange={(e) => setName(e.target.name)} value={name} required/>
+            <input type='text' className='border border-zinc-300 rounded w-full p-2 mt-1' onClick={(e) => setName(e.target.name)} value={name} required/>
             </div>
           }
           <div className='w-full'>
             <p>Email</p>
-            <input type='email' className='border border-zinc-300 rounded w-full p-2 mt-1' onChange={(e) => setEmail(e.target.name)} value={email} required/>
+            <input type='email' className='border border-zinc-300 rounded w-full p-2 mt-1' onClick={(e) => setEmail(e.target.name)} value={email} required/>
           </div>
           <div className='w-full'>
             <p>password</p>
-            <input type='password' className='border border-zinc-300 rounded w-full p-2 mt-1' onChange={(e) => setPassword(e.target.name)} value={password} required/>
+            <input type='password' className='border border-zinc-300 rounded w-full p-2 mt-1' onClick={(e) => setPassword(e.target.name)} value={password} required/>
           </div>
           <button className='bg-primary text-white w-full py-2 rounded-md text-base'> {state === 'Sign Up' ? "Create Account" : "log in"}</button>
           {
@@ -37,7 +37,7 @@ const Login = () => {
             :  <p>Craete an new account? <span  onClick={()=> setState('Sign Up') } className='text-primary  cursor-pointer'>Click here</span></p>
            
           }
-        </div> className
+        </div> 
     </form>
   )
 }

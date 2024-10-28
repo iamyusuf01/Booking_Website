@@ -18,7 +18,7 @@ const Profile = () => {
   const [isEdit, setIsEdit] = useState(true)
 
   return (
-    <div className='max-w-lg flex flex-col gap-2 text-sm'>
+    <div className='max-w-lg flex flex-col gap-2 text-sm py-4 md:mx-10 mb-5'>
       <img className='w-36 rounded' src={user.image} alt=''/>
       {
         isEdit 

@@ -7,7 +7,7 @@ const Navbar = () => {
 
     const navigate = useNavigate();
     const [showMenu, setShowMenu] = useState(false);
-    const [token, setToken] = useState(true);
+    const [token, setToken] = useState(false);
      
   return (
     <div className='flex items-center justify-between text-sm py-4 md:mx-10 mb-5 border-b border-b-gray-400'>
@@ -41,7 +41,7 @@ const Navbar = () => {
                     <div className='min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4'>
                         <p onClick={() => navigate('profile')} className='hover:text-black cursor-pointer'>Profile</p>
                         <p onClick={() => navigate('My-Appoinment')}  className='hover:text-black cursor-pointer'>My Appoinment</p>
-                        <p onClick={() => setToken(false)} className='hover:text-black cursor-pointer'>Logout</p>
+                        <p onClick={() => setToken(true)} className='hover:text-black cursor-pointer'>Logout</p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
          }
             <img onClick={() => setShowMenu(true)} className='w-6 md:hidden' src={assets.menu_icon} alt=''/>
          {/* Mobile Menu */}
-         <div className={` ${showMenu ? 'fixed w-full' : 'h-0 w-0'}md:hidden right-0 top-0 z-20 overflow-hidden bg-white transition-all`}>
+         <div className={` ${showMenu ? 'fixed w-full' : 'h-0 w-0'} md:hidden right-0 top-0 z-20 overflow-hidden bg-white transition-all`}>
             <div className='flex items-center justify-between px-5 py-6'>
                 <img className='w-36' src={assets.logo} alt=''/>
                 <img className='w-7' onClick={() => setShowMenu(false)} src={assets.cross_icon} alt=''/>

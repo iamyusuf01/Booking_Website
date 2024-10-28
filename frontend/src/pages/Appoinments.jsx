@@ -1,6 +1,6 @@
 import { AppContext } from '../context/AppContext';
 import { useContext } from 'react';
-import { useParams } from'react-router-dom';
+import { useNavigate, useParams } from'react-router-dom';
 import { useState, useEffect } from'react';
 import { assets } from '../assets/assets';
 import RelatedDoc from '../components/RelatedDoc';
@@ -8,6 +8,8 @@ import RelatedDoc from '../components/RelatedDoc';
 const Appoinments = () => {
   const {docId} = useParams();
   const {doctors, currencySymbol} = useContext(AppContext)
+
+  const navigate = useNavigate();
 
   const dayOfWeak = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
@@ -78,7 +80,7 @@ const Appoinments = () => {
 
   return docInfo &&  (
      <div>
-        <div className='flex flex-col sm:flex-row gap-4'>
+        <div className='flex flex-col sm:flex-row gap-4 py-4 md:mx-10 mb-5'>
             <div>
               <img className='bg-primary w-full sm:max-w-72 rounded-lg ' src={docInfo.image} alt=''/>
             </div>
@@ -120,7 +122,7 @@ const Appoinments = () => {
                 </p>
               ))}
             </div>
-            <button className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6 '>Book an appointment </button>
+            <button onClick={() => navigate('/my-appointments')} className='bg-primary text-white text-sm font-light px-14 py-3 rounded-full my-6 '>Book an appointment </button>
         </div>
 
         {/* Listing Related Doctors */}
